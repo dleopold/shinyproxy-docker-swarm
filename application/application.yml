@@ -1,5 +1,5 @@
 proxy:
-  title: Jonah Ventures shiny swarm
+  title: Jonah Ventures Shiny Apps
   port: 8080 # use Port 8080 for ShinyProxy
   
   container-wait-time: 30000 # how long should we wait for the container to spin up (30s as default as this is enough for our Shiny apps)
@@ -12,23 +12,23 @@ proxy:
   # usage-stats-password: xxxx # influxdb password if needed
 
   #### OpenID Connect Authentication ####
-  #authentication: openid # use openid auth framework
-  #openid:
-  #  roles-claim: cognito:groups # use the groups value passed by AWS cognito to identify user groups
-  #  auth-url: https://shinyproxy-jonahdna.auth.us-east-1.amazoncognito.com/oauth2/authorize
-  #  token-url: https://shinyproxy-jonahdna.auth.us-east-1.amazoncognito.com/oauth2/token
-  #  jwks-url: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_DF4g0mr7n/.well-known/jwks.json
-  #  logout-url: https://shinyproxy-jonahdna.auth.us-east-1.amazoncognito.com/logout?client_id=405avc5g9c9g14f6pteo9b085r&logout_uri=https://shinyproxy.jonahdna.com
-  #  client-id: 405avc5g9c9g14f6pteo9b085r
-  #  client-secret: 1p3vm3l8adsr7gr8hhse52bl2na7eagr4634ccfsp0opt2oc6v7q
+  authentication: openid # use openid auth framework
+  openid:
+    roles-claim: cognito:groups # use the groups value passed by AWS cognito to identify user groups
+    auth-url: https://shinyproxy-jonahdna.auth.us-east-1.amazoncognito.com/oauth2/authorize
+    token-url: https://shinyproxy-jonahdna.auth.us-east-1.amazoncognito.com/oauth2/token
+    jwks-url: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_DF4g0mr7n/.well-known/jwks.json
+    logout-url: https://shinyproxy-jonahdna.auth.us-east-1.amazoncognito.com/logout?client_id=405avc5g9c9g14f6pteo9b085r&logout_uri=https://shinyproxy.jonahdna.com
+    client-id: 405avc5g9c9g14f6pteo9b085r
+    client-secret: 1p3vm3l8adsr7gr8hhse52bl2na7eagr4634ccfsp0opt2oc6v7q
   
   #### Simple Authentication (for demo only, don't use in production) ####
-  authentication: simple
-  admin-groups: admins
-  users:
-  - name: admin
-    password: admin
-    groups: admins
+  #authentication: simple
+  #admin-groups: admins
+  #users:
+  #- name: admin
+  #  password: admin
+  #  groups: admins
   
   # Set the container backend: The container-backend can be one of docker (default), docker-swarm or kubernetes
   container-backend: docker-swarm
