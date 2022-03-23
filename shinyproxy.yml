@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
   shinyproxy:
-    image: drleopold/shinyproxy-docker
+    image: drleopold/shinyproxy-docker:latest
     # The labels section is where you specify configuration values for Traefik.
     # Docker labels don’t do anything by themselves, but Traefik reads these so
     # it knows how to treat containers.
@@ -36,7 +36,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   
   jonah-lims:
-    image: drleopold/jonah-lims
+    image: drleopold/jonah-lims:latest
     networks:
       - sp-net
 
