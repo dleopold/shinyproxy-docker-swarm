@@ -36,7 +36,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   
   jonah-lims:
-    image: drleopold/jonah-lims:latest
+    image: drleopold/jonah-lims:prod
     networks:
       - sp-net
 

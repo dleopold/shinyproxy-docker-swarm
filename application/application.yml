@@ -41,7 +41,7 @@ proxy:
     - id: jonah-lims
       display-name: Jonah LIMS
       container-cmd: ["R", "-e", "options('shiny.port'=3838,shiny.host='0.0.0.0');jonah.lims::run_app()"]
-      container-image: drleopold/jonah-lims:latest 
+      container-image: drleopold/jonah-lims:prod 
       access-groups: admins 
       container-network: sp-net
     - id: euler
