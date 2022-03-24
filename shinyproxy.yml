@@ -40,6 +40,11 @@ services:
     networks:
       - sp-net
 
+  euler:
+    image: presstofan/shiny-euler-app
+    networks:
+      - sp-net
+
 networks:
   traefik-public:
     external: true
