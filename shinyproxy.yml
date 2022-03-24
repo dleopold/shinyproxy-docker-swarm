@@ -36,7 +36,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   
   jonah-lims:
-    image: drleopold/jonah-lims:latest
+    image: 220571360826.dkr.ecr.us-east-1.amazonaws.com/jonah-lims:latest
     networks:
       - sp-net
 
