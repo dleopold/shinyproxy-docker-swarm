@@ -18,7 +18,7 @@ proxy:
     auth-url: https://shinyproxy-jonahdna.auth.us-east-1.amazoncognito.com/oauth2/authorize
     token-url: https://shinyproxy-jonahdna.auth.us-east-1.amazoncognito.com/oauth2/token
     jwks-url: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_DF4g0mr7n/.well-known/jwks.json
-    logout-url: https://shinyproxy-jonahdna.auth.us-east-1.amazoncognito.com/logout?client_id=405avc5g9c9g14f6pteo9b085r&logout_uri=https://shinyproxy.jonahdna.com
+    logout-url: https://shinyproxy-jonahdna.auth.us-east-1.amazoncognito.com/logout?client_id=405avc5g9c9g14f6pteo9b085r&logout_uri=https://apps.jonahdna.com
     client-id: 405avc5g9c9g14f6pteo9b085r
     client-secret: 1p3vm3l8adsr7gr8hhse52bl2na7eagr4634ccfsp0opt2oc6v7q
   
@@ -41,7 +41,7 @@ proxy:
     - id: jonah-lims
       display-name: Jonah LIMS
       container-cmd: ["R", "-e", "options('shiny.port'=3838,shiny.host='0.0.0.0');jonah.lims::run_app()"]
-      container-image: 220571360826.dkr.ecr.us-east-1.amazonaws.com/jonah-lims:latest 
+      container-image: drleopold/jonah-lims:latest 
       access-groups: admins 
       container-network: sp-net
 
