@@ -2,8 +2,8 @@ version: '3.3'
 
 services:
 
-  euler:
-    image: presstofan/shiny-euler-app
+  jonah-lims:
+    image: 220571360826.dkr.ecr.us-east-1.amazonaws.com/jonah-lims:latest
     # The labels section is where you specify configuration values for Traefik.
     # Docker labels don’t do anything by themselves, but Traefik reads these so
     # it knows how to treat containers.
